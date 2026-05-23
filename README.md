@@ -347,7 +347,7 @@ code --install-extension novalang-1.0.0.vsix
 
 ---
 
-## 👤 Autor
+## 👤 Autores
 
-Desarrollado en **Go** como proyecto académico de Lenguajes de Programación — EIA.  
-Inspirado en *Writing an Interpreter in Go* de Thorsten Ball.
+Desarrollado en **Go** como proyecto académico de la materia Lenguajes y Compiladores — EIA.  
+Juan Jose Jaramillo Mora y Dylan Alexander Mejia Ceballos
