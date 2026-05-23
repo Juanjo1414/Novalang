@@ -1,0 +1,170 @@
+{
+  "name": "Nova Dark",
+  "type": "dark",
+  "colors": {
+    "editor.background":              "#0d1117",
+    "editor.foreground":              "#c9d1d9",
+    "editor.lineHighlightBackground": "#161b22",
+    "editor.selectionBackground":     "#264f78",
+    "editorCursor.foreground":        "#58a6ff",
+    "editorLineNumber.foreground":    "#6e7681",
+    "editorLineNumber.activeForeground": "#c9d1d9",
+    "editorIndentGuide.background":   "#21262d",
+    "editorBracketMatch.background":  "#1f6feb55",
+    "editorBracketMatch.border":      "#388bfd",
+
+    "activityBar.background":         "#010409",
+    "activityBar.foreground":         "#f0f6fc",
+    "sideBar.background":             "#0d1117",
+    "sideBar.foreground":             "#c9d1d9",
+    "sideBarTitle.foreground":        "#58a6ff",
+
+    "statusBar.background":           "#1c2128",
+    "statusBar.foreground":           "#c9d1d9",
+    "statusBarItem.hoverBackground":  "#30363d",
+
+    "tab.activeBackground":           "#0d1117",
+    "tab.inactiveBackground":         "#010409",
+    "tab.activeBorderTop":            "#58a6ff",
+    "tab.activeForeground":           "#ffffff",
+    "tab.inactiveForeground":         "#6e7681",
+    "editorGroupHeader.tabsBackground": "#010409",
+
+    "titleBar.activeBackground":      "#0d1117",
+    "titleBar.activeForeground":      "#c9d1d9",
+
+    "terminal.background":            "#0d1117",
+    "terminal.foreground":            "#c9d1d9",
+    "terminal.ansiCyan":              "#39d3f0",
+    "terminal.ansiGreen":             "#3fb950",
+    "terminal.ansiYellow":            "#d29922",
+    "terminal.ansiBlue":              "#58a6ff",
+    "terminal.ansiMagenta":           "#bc8cff",
+    "terminal.ansiRed":               "#ff7b72",
+
+    "list.activeSelectionBackground": "#1f6feb",
+    "list.hoverBackground":           "#161b22",
+
+    "input.background":               "#0d1117",
+    "input.border":                   "#30363d",
+    "input.foreground":               "#c9d1d9",
+    "focusBorder":                    "#58a6ff"
+  },
+  "tokenColors": [
+    {
+      "name": "Comentarios",
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": { "foreground": "#8b949e", "fontStyle": "italic" }
+    },
+    {
+      "name": "Keywords de control (if, while, for, return...)",
+      "scope": ["keyword.control.novalang"],
+      "settings": { "foreground": "#ff7b72", "fontStyle": "bold" }
+    },
+    {
+      "name": "Keywords de declaración (let, const, function)",
+      "scope": ["keyword.declaration.novalang"],
+      "settings": { "foreground": "#ff7b72", "fontStyle": "bold" }
+    },
+    {
+      "name": "Operadores lógicos en palabra (and, or)",
+      "scope": ["keyword.operator.logical.word.novalang"],
+      "settings": { "foreground": "#ff7b72" }
+    },
+    {
+      "name": "Números",
+      "scope": [
+        "constant.numeric.integer.novalang",
+        "constant.numeric.float.novalang",
+        "constant.numeric.hex.novalang",
+        "constant.numeric.scientific.novalang"
+      ],
+      "settings": { "foreground": "#79c0ff" }
+    },
+    {
+      "name": "Strings",
+      "scope": ["string.quoted.double.novalang"],
+      "settings": { "foreground": "#a5d6ff" }
+    },
+    {
+      "name": "Escapes dentro de strings",
+      "scope": ["constant.character.escape.novalang"],
+      "settings": { "foreground": "#39d3f0" }
+    },
+    {
+      "name": "Booleanos y nil",
+      "scope": [
+        "constant.language.boolean.novalang",
+        "constant.language.null.novalang"
+      ],
+      "settings": { "foreground": "#79c0ff", "fontStyle": "bold" }
+    },
+    {
+      "name": "Nombre de función definida (let nombre = function)",
+      "scope": ["entity.name.function.novalang"],
+      "settings": { "foreground": "#d2a8ff", "fontStyle": "bold" }
+    },
+    {
+      "name": "Llamadas a función",
+      "scope": ["entity.name.function.call.novalang"],
+      "settings": { "foreground": "#d2a8ff" }
+    },
+    {
+      "name": "Builtin print",
+      "scope": ["support.function.builtin.novalang"],
+      "settings": { "foreground": "#ffa657", "fontStyle": "bold" }
+    },
+    {
+      "name": "Operadores de comparación",
+      "scope": ["keyword.operator.comparison.novalang"],
+      "settings": { "foreground": "#ff7b72" }
+    },
+    {
+      "name": "Operadores de asignación",
+      "scope": [
+        "keyword.operator.assignment.novalang",
+        "keyword.operator.assignment.compound.novalang"
+      ],
+      "settings": { "foreground": "#ff7b72" }
+    },
+    {
+      "name": "Operadores aritméticos",
+      "scope": ["keyword.operator.arithmetic.novalang"],
+      "settings": { "foreground": "#ff7b72" }
+    },
+    {
+      "name": "Negación lógica !",
+      "scope": ["keyword.operator.logical.novalang"],
+      "settings": { "foreground": "#ff7b72" }
+    },
+    {
+      "name": "Identificadores (variables)",
+      "scope": ["variable.other.novalang"],
+      "settings": { "foreground": "#c9d1d9" }
+    },
+    {
+      "name": "Puntuación bloques {}",
+      "scope": ["punctuation.section.block.novalang"],
+      "settings": { "foreground": "#ffa657" }
+    },
+    {
+      "name": "Puntuación paréntesis ()",
+      "scope": ["punctuation.section.parens.novalang"],
+      "settings": { "foreground": "#ffa657" }
+    },
+    {
+      "name": "Puntuación corchetes []",
+      "scope": ["punctuation.section.brackets.novalang"],
+      "settings": { "foreground": "#ffa657" }
+    },
+    {
+      "name": "Separadores , ;",
+      "scope": [
+        "punctuation.separator.comma.novalang",
+        "punctuation.terminator.statement.novalang",
+        "punctuation.separator.colon.novalang"
+      ],
+      "settings": { "foreground": "#6e7681" }
+    }
+  ]
+}

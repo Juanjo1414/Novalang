@@ -1,0 +1,100 @@
+// ============================================================
+// ejemplo.nv — Programa de demostración del intérprete NovaLang
+// Ejecutar: nova ejemplo.nv
+// ============================================================
+
+// ── Variables y tipos ────────────────────────────────────────
+let nombre = "NovaLang";
+let version = 1;
+let pi = 3.14159;
+
+print("=== " + nombre + " v" + "1.0" + " ===");
+
+// ── Aritmética y precedencia ─────────────────────────────────
+let resultado = 2 + 3 * 4;        // 14, no 20
+let potencia  = 2 ^ 8;            // 256
+let division  = 10 / 4;           // 2.5 (float)
+let modulo    = 17 % 5;           // 2
+
+print("2 + 3 * 4 = ");
+print(resultado);
+print("2 ^ 8 = ");
+print(potencia);
+print("10 / 4 = ");
+print(division);
+
+// ── Strings ──────────────────────────────────────────────────
+let saludo  = "Hola, " + nombre + "!";
+print(saludo);
+
+// ── Booleanos y lógica ───────────────────────────────────────
+let esMayor = 10 > 5;
+let esIgual = 3 == 3;
+let ambos   = esMayor and esIgual;
+print(ambos);
+
+// ── Condicional con elseif ───────────────────────────────────
+let x = 42;
+if (x > 100) {
+    print("grande");
+} elseif (x > 10) {
+    print("mediano");
+} else {
+    print("pequeno");
+}
+
+// ── Función simple ───────────────────────────────────────────
+let suma = function(a, b) {
+    return a + b;
+};
+print(suma(10, 20));
+
+// ── Recursión: factorial ─────────────────────────────────────
+let factorial = function(n) {
+    if (n <= 1) { return 1; }
+    return n * factorial(n - 1);
+};
+print(factorial(6));
+
+// ── Recursión: Fibonacci ─────────────────────────────────────
+let fib = function(n) {
+    if (n <= 1) { return n; }
+    return fib(n - 1) + fib(n - 2);
+};
+print(fib(10));
+
+// ── Closure ──────────────────────────────────────────────────
+let makeMultiplicador = function(factor) {
+    return function(x) { return x * factor; };
+};
+let triplicar = makeMultiplicador(3);
+print(triplicar(7));
+
+// ── Bucle while con acumulador ───────────────────────────────
+let sumaTotal = 0;
+let i = 1;
+while (i <= 10) {
+    let sumaTotal = sumaTotal + i;
+    let i = i + 1;
+}
+print(sumaTotal);
+
+// ── Bucle for ────────────────────────────────────────────────
+let producto = 1;
+for (let j = 1; j <= 5; let j = j + 1) {
+    let producto = producto * j;
+}
+print(producto);
+
+// ── Break y continue ─────────────────────────────────────────
+let k = 0;
+let pares = 0;
+while (k < 20) {
+    let k = k + 1;
+    if (k % 2 != 0) { continue; }
+    let pares = pares + k;
+    if (pares > 30) { break; }
+}
+print(pares);
+
+print("=== Fin ===");

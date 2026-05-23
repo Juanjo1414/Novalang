@@ -1,0 +1,156 @@
+{
+  "name": "NovaLang",
+  "scopeName": "source.novalang",
+  "fileTypes": ["nv"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords_control" },
+    { "include": "#keywords_declaration" },
+    { "include": "#keywords_logical" },
+    { "include": "#constants" },
+    { "include": "#builtins" },
+    { "include": "#function_definition" },
+    { "include": "#function_call" },
+    { "include": "#operators" },
+    { "include": "#identifiers" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.novalang",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.novalang",
+          "begin": "/\\*",
+          "beginCaptures": { "0": { "name": "punctuation.definition.comment.begin.novalang" } },
+          "end": "\\*/",
+          "endCaptures":   { "0": { "name": "punctuation.definition.comment.end.novalang" } }
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.novalang",
+      "begin": "\"",
+      "beginCaptures": { "0": { "name": "punctuation.definition.string.begin.novalang" } },
+      "end": "\"",
+      "endCaptures":   { "0": { "name": "punctuation.definition.string.end.novalang" } },
+      "patterns": [
+        {
+          "name": "constant.character.escape.novalang",
+          "match": "\\\\[ntr\\\\\"']"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hex.novalang",
+          "match": "\\b0[xX][0-9a-fA-F]+\\b"
+        },
+        {
+          "name": "constant.numeric.float.novalang",
+          "match": "\\b[0-9]+\\.[0-9]+([eE][+-]?[0-9]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.scientific.novalang",
+          "match": "\\b[0-9]+[eE][+-]?[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.novalang",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "keywords_control": {
+      "name": "keyword.control.novalang",
+      "match": "\\b(if|elseif|else|while|for|in|break|continue|return)\\b"
+    },
+    "keywords_declaration": {
+      "name": "keyword.declaration.novalang",
+      "match": "\\b(let|const|function|import)\\b"
+    },
+    "keywords_logical": {
+      "name": "keyword.operator.logical.word.novalang",
+      "match": "\\b(and|or)\\b"
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.novalang",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "constant.language.null.novalang",
+          "match": "\\bnil\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "name": "support.function.builtin.novalang",
+      "match": "\\b(print)(?=\\s*\\()"
+    },
+    "function_definition": {
+      "comment": "Resalta: let nombre = function(...)  o  function nombre(...)",
+      "patterns": [
+        {
+          "match": "\\b(let)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*(=)\\s*(function)\\b",
+          "captures": {
+            "1": { "name": "keyword.declaration.novalang" },
+            "2": { "name": "entity.name.function.novalang" },
+            "3": { "name": "keyword.operator.assignment.novalang" },
+            "4": { "name": "keyword.declaration.novalang" }
+          }
+        }
+      ]
+    },
+    "function_call": {
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()",
+      "captures": {
+        "1": { "name": "entity.name.function.call.novalang" }
+      }
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.novalang",
+          "match": "==|!=|<=|>=|<|>"
+        },
+        {
+          "name": "keyword.operator.assignment.compound.novalang",
+          "match": "\\+=|-="
+        },
+        {
+          "name": "keyword.operator.assignment.novalang",
+          "match": "(?<![=!<>])=(?!=)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.novalang",
+          "match": "\\+|-|\\*|/|%|\\^"
+        },
+        {
+          "name": "keyword.operator.logical.novalang",
+          "match": "!"
+        }
+      ]
+    },
+    "identifiers": {
+      "name": "variable.other.novalang",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+    },
+    "punctuation": {
+      "patterns": [
+        { "name": "punctuation.section.block.novalang",      "match": "[{}]" },
+        { "name": "punctuation.section.parens.novalang",     "match": "[()]" },
+        { "name": "punctuation.section.brackets.novalang",   "match": "[\\[\\]]" },
+        { "name": "punctuation.separator.comma.novalang",    "match": "," },
+        { "name": "punctuation.terminator.statement.novalang","match": ";" },
+        { "name": "punctuation.separator.colon.novalang",    "match": ":" }
+      ]
+    }
+  }
+}

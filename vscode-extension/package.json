@@ -1,0 +1,41 @@
+{
+  "name": "novalang",
+  "displayName": "NovaLang",
+  "description": "Soporte completo para NovaLang: resaltado de sintaxis, snippets, tema y configuración de lenguaje",
+  "version": "1.0.0",
+  "publisher": "novalang",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Programming Languages", "Snippets", "Themes"],
+  "keywords": ["novalang", "nova", "interpreter", "scripting"],
+  "repository": { "type": "git", "url": "https://github.com/novalang/novalang" },
+  "contributes": {
+    "languages": [
+      {
+        "id": "novalang",
+        "aliases": ["NovaLang", "nova", "nv"],
+        "extensions": [".nv"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "novalang",
+        "scopeName": "source.novalang",
+        "path": "./syntaxes/novalang.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "novalang",
+        "path": "./snippets/novalang.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Nova Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/nova-dark-color-theme.json"
+      }
+    ]
+  }
+}

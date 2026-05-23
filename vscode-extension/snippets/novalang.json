@@ -1,0 +1,133 @@
+{
+  "Variable let": {
+    "prefix": "let",
+    "body": ["let ${1:nombre} = ${2:valor};"],
+    "description": "Declara una variable"
+  },
+  "Constante": {
+    "prefix": "const",
+    "body": ["const ${1:NOMBRE} = ${2:valor};"],
+    "description": "Declara una constante"
+  },
+  "Función": {
+    "prefix": "fn",
+    "body": [
+      "let ${1:nombre} = function(${2:params}) {",
+      "\t${3:// cuerpo}",
+      "\treturn ${4:nil};",
+      "};"
+    ],
+    "description": "Define una función"
+  },
+  "Función anónima": {
+    "prefix": "fna",
+    "body": [
+      "function(${1:params}) {",
+      "\t${2:// cuerpo}",
+      "\treturn ${3:nil};",
+      "}"
+    ],
+    "description": "Función anónima"
+  },
+  "If": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condición}) {",
+      "\t${2:// cuerpo}",
+      "}"
+    ],
+    "description": "Bloque if"
+  },
+  "If-Else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:condición}) {",
+      "\t${2:// verdadero}",
+      "} else {",
+      "\t${3:// falso}",
+      "}"
+    ],
+    "description": "Bloque if-else"
+  },
+  "If-ElseIf-Else": {
+    "prefix": "ifei",
+    "body": [
+      "if (${1:condición1}) {",
+      "\t${2:// rama 1}",
+      "} elseif (${3:condición2}) {",
+      "\t${4:// rama 2}",
+      "} else {",
+      "\t${5:// por defecto}",
+      "}"
+    ],
+    "description": "Bloque if-elseif-else"
+  },
+  "While": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condición}) {",
+      "\t${2:// cuerpo}",
+      "}"
+    ],
+    "description": "Bucle while"
+  },
+  "For": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:i} = ${2:0}; ${1:i} < ${3:10}; let ${1:i} = ${1:i} + 1) {",
+      "\t${4:// cuerpo}",
+      "}"
+    ],
+    "description": "Bucle for clásico"
+  },
+  "Print": {
+    "prefix": "pr",
+    "body": ["print(${1:expresión});"],
+    "description": "Imprime en consola"
+  },
+  "Return": {
+    "prefix": "ret",
+    "body": ["return ${1:valor};"],
+    "description": "Retorna un valor"
+  },
+  "Factorial": {
+    "prefix": "factorial",
+    "body": [
+      "let factorial = function(n) {",
+      "\tif (n <= 1) { return 1; }",
+      "\treturn n * factorial(n - 1);",
+      "};"
+    ],
+    "description": "Función factorial recursiva"
+  },
+  "Fibonacci": {
+    "prefix": "fibonacci",
+    "body": [
+      "let fib = function(n) {",
+      "\tif (n <= 1) { return n; }",
+      "\treturn fib(n - 1) + fib(n - 2);",
+      "};"
+    ],
+    "description": "Función Fibonacci recursiva"
+  },
+  "Closure / Higher-order": {
+    "prefix": "closure",
+    "body": [
+      "let ${1:makeFunc} = function(${2:x}) {",
+      "\treturn function(${3:y}) {",
+      "\t\treturn ${4:x + y};",
+      "\t};",
+      "};"
+    ],
+    "description": "Closure / función de orden superior"
+  },
+  "Comentario de bloque": {
+    "prefix": "/*",
+    "body": [
+      "/*",
+      " * ${1:descripción}",
+      " */"
+    ],
+    "description": "Comentario de bloque"
+  }
+}
